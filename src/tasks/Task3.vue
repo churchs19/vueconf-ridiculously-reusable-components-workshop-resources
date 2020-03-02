@@ -12,7 +12,7 @@
 
     <div class="feeds">
       <!-- TASK BEGINS HERE -->
-      <div class="feed">
+      <!-- <div class="feed">
         <div v-for="news of newsFeed" :key="news.id">
           <div class="card">
             <template v-if="news.type === 'ad'">
@@ -50,17 +50,17 @@
             </template>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- DESIRED USE PATTERN -->
-      <!-- <div class="feed">
+      <div class="feed">
         <Component
           v-for="news of newsFeed"
           :key="news.id"
           :is="getNewsTypeComponent(news.type)"
           :news="news"
         />
-      </div> -->
+      </div>
 
       <!-- TASK ENDS HERE -->
     </div>
@@ -157,16 +157,6 @@ export default {
 .quote
   margin: 10px 0
   font-style: italic
-
-.event
-  p
-    margin: 0
-
-  small
-    font-weight: 700
-
-  button
-    margin-top: 1rem
 
 .mr-1
   margin-right: 5px
