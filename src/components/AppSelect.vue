@@ -1,11 +1,22 @@
 <template>
   <AppDropdown>
-    Your code here
+    <slot name="selected">
+      {{ value }}
+    </slot>
+    <template v-slot:content>
+      <ul>
+        <li v-for="(option, index) in options" :key="index" @click="update(option)">
+          <slot name="option" v-bind="{ option }">
+            {{ option.nam }}
+          </slot>
+        </li>
+      </ul>
+    </template>
   </AppDropdown>
 </template>
 
 <script>
-import AppDropdown from './AppDropdown'
+import AppDropdown from "./AppDropdown";
 
 export default {
   components: {
@@ -20,12 +31,12 @@ export default {
     }
   },
   methods: {
-    update (option, cb) {
-      this.$emit('input', option)
-      if (cb) cb()
+    update(option, cb) {
+      this.$emit("input", option);
+      if (cb) cb();
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
